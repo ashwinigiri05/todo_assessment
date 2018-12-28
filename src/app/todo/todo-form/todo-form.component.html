@@ -1,0 +1,38 @@
+
+<div><h3>New_Todo</h3></div>
+<div class="row">
+  <div class="col">
+    <form>
+      <div class="form-group">
+        <label for="task">Task</label>
+        <input type="text"
+          class="form-control"
+          id="task"
+          aria-describedby="emailHelp"
+          name="name"
+          [(ngModel)]="name">
+      </div>
+      <div class="form-group">
+        <label for="category">Category</label>
+        <select id="category"
+          class="form-control"
+          name="category"
+          [(ngModel)]="category">
+          <!-- <select class="hideLabel form-control" #category> -->
+          <!-- <option selected=" " >{{toDoService.tasks[id].category}}</option> -->
+            <option *ngFor="let cn of cname" >{{cn.name}}</option>
+        </select>
+      </div>
+      <div class="form-group form-check">
+        <input type="checkbox"
+          class="form-check-input"
+          name="status"
+          [(ngModel)]="status">
+          <label class="form-check-label" for="status">Completed</label>
+      </div>
+      <button class="btn btn-warning mr-3" type="button" (click)="onClearClick()">Clear</button>
+      <button class="btn btn-primary mr-3" type="button" (click)="onSubmitClicked()">Submit</button>
+      <button class="btn btn-danger " type="button" (click)="onCancleOfForm()">Cancel</button>
+    </form>
+  </div>
+</div>
